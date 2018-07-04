@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东-欢迎登陆</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("#icon a").mousemove(function () {
+              $(this).css({"color":"red","text-decoration":"underline"});
+            }).mouseout(function () {
+                $(this).css({"color":"rgb(153,153,153)","text-decoration":"none"});
+            });
+            $("#footers a").mouseover(function () {
+                $(this).css({"color":"red","text-decoration":"underline"});
+            }).mouseout(function () {
+                $(this).css({"color":"rgb(153,153,153)","text-decoration":"none"});
+            });
+            $("#footer a").mousemove(function () {
+                $(this).css({"color":"red","text-decoration":"underline"});
+            }).mouseout(function () {
+                $(this).css({"color":"rgb(153,153,153)","text-decoration":"none"});
+            });
+            $(".qrcode-main").mouseover(function () {
+                $(".qrcode-img").stop().animate({"left":"20"},300,function () {
+                    $(".qrcode-help").show();
+                });
+            }).mouseleave(function () {
+                $(".qrcode-help").hide();
+                $(".qrcode-img").stop().animate({"left":"100"},300);
+            });
+            $("#saoma").mouseover(function () {
+                $("#saoma a").css("color","red");
+            }).mouseout(function () {
+                $("#saoma a").css("color","rgb(102,102,102)");
+            });
+            $("#zhanghu").mouseover(function () {
+                $("#zhanghu a").css("color","red");
+            }).mouseout(function () {
+                $("#zhanghu a").css("color","rgb(102,102,102)");
+            });
+            $(".qc").hide();
+            $("#saoma").click(function () {
+                $("#header_section a").removeClass("header_color");
+                $("#header_first a").addClass("header_color");
+                $(".qc").hide();
+                $("#st").show();
+            });
+            $("#zhanghu").click(function () {
+                $(".qc").show();
+                $("#st").hide();
+                $("#header_first a").removeClass("header_color");
+                $("#header_section").find('a').addClass("header_color");
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="header">
+    <div id="logo"><img src="images/logo.png" alt=""><img src="images/l-icon.png" alt=""></div>
+    <div id="icon"><img src="images/q-icon.png" alt=""><a href="#">登录页面，问卷调查</a></div>
+    <div id="alerts" style="font-size: 12px">
+        <p>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<span>《京东隐私政策》</span>已上线，将更有利于保护您的个人隐私。</p>
+    </div>
+    <div id="img"><img src="images/section.jpg" alt=""></div>
+    <div id="text"><p>京东不会以任何理由要求您转账汇款，谨防诈骗。</p></div>
+    <div id="input">
+        <div id="saoma" style="font-size: 20px"><a href="#">扫码登录</a></div>
+        <div id="zhanghu" style="font-size: 20px"><a href="#">账户登录</a></div>
+        <div id="st">
+            <div class="qrcode-main">
+                <div class="qrcode-img" style="left:100px;">
+                    <img src="images/erweima.png" alt="">
+                </div>
+                <div class="qrcode-help"><img src="images/phone-orange.png" alt=""></div>
+            </div>
+            <div id="mc">
+                <p>打开<span>手机京东</span>&nbsp;&nbsp;<span>扫描二维码</span></p>
+                <ul>
+                    <li>免输入</li>
+                    <li>更快</li>
+                    <li>更安全</li>
+                </ul>
+            </div>
+        </div>
+        <div class="qc">
+            <div id="div_changmian"></div>
+            <!--邮箱登陆-->
+            <form action="#" method="post" id="biaodan">
+                <div class="div_1"><img src="images/QQ图片20180630173908.png" alt=""><input type="text" placeholder="邮箱/用户名/已验证手机"></div>
+                <div class="div_1"><img src="images/QQ图片20180630173922.png" alt=""><input type="password" placeholder="密码"></div>
+                <div id="div_2"> <a>忘记密码</a></div>
+                <input type="button" value="登&nbsp;&nbsp;&nbsp;陆">
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <a href="#">QQ</a>
+        <a href="#">微信</a>
+        <a href="#">立即注册</a>
+    </div>
+    <div id="footers">
+        <a href="#">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">人才招聘</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">商家入驻</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">手机京东</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">友情链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">销售联盟</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">京东社区</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">京东公益</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">English Site</a>
+        <div id="copyright">
+            Copyright © 2004-2018  京东JD.com 版权所有
+        </div>
+    </div>
+</div>
+</body>
+</html>
